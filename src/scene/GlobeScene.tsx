@@ -186,6 +186,7 @@ export default function GlobeScene() {
         />
         
       </Canvas>
+      /*
       <div ref={professorFaceRef} className="professor-face-overlay">
         <img
           src="/textures/bigv2.png"
@@ -193,6 +194,7 @@ export default function GlobeScene() {
           alt=""
         />
       </div>
+      */
     </div>
   );
 }
