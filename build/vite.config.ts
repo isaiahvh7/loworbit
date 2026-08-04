@@ -11,5 +11,5 @@ export default defineConfig({
   // everything works fine in local dev at "/". Update this if the repo is
   // ever renamed, or remove it entirely if you switch to a custom domain
   // or a <user>.github.io user/org page.
-  base: '/low-orbit/',
+  base: '/loworbit/',
 })
