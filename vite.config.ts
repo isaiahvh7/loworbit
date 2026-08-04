@@ -12,4 +12,7 @@ export default defineConfig({
   // ever renamed, or remove it entirely if you switch to a custom domain
   // or a <user>.github.io user/org page.
   base: '/loworbit/',
+  worker: {
+    format: 'es'
+  }
 })
