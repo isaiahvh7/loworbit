@@ -1,0 +1,137 @@
+#topleft {
+  position: fixed;
+  top: 10px;
+  right: 1235px;
+
+  width: 220px;
+  padding: 16px 20px;
+
+  text-align: left;
+
+  border: 0.5px solid aqua;
+  border-radius: 0px;
+
+  color: aqua;
+}
+
+#topright { 
+  position: fixed;
+  top: 10px;
+  right: 10px;
+
+  width: 180px;
+  padding: 16px 20px;
+
+  text-align: right;
+
+  border: 0.5px solid aqua;
+  border-radius: 0px;
+
+  color: aqua;
+}
+
+.StatusPanel p {
+  color:aqua;
+}
+
+.TelemetryPanel p {
+  color:aqua;
+}
+
+#middle {
+  z-index: 0;
+}
+
+#lowerleft {
+  position: fixed;
+  bottom: 10px;
+  left: -10px;
+
+}
+
+.futuristicCircleInner {
+  animation: spin 25s linear infinite;
+  }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#scrollbox {
+  position: fixed;
+  right: 0px;
+  bottom: 10px;
+
+  width: 250px;
+  height: 180px;
+
+  padding: 12px;
+  border: 0px solid aqua;
+  /*background-color: rgba(0, 0, 0, 0.35);*/
+
+  text-align: right;
+
+  overflow-y: hidden;
+
+  color: aqua;
+  font-family: monospace;
+  font-size: 14px;
+
+  box-sizing: border-box;
+}
+
+#scrollbox p {
+  margin: 0 0 4px 0;
+  color: aqua;
+}
+
+.hud_panel {
+  z-index: 10;
+}
+
+.professor-face-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  overflow: hidden;
+
+  --professor-face-scale: 2000;
+  --eye-x: 38.85%;
+  --eye-y: 26.4%;
+}
+
+.professor-face-image {
+  position: absolute;
+  transition: none;
+
+  left: 50%;
+  top: 50%;
+
+  width: 100vw;
+  height: auto;
+  min-height: 100vh;
+  max-width: none;
+
+  opacity: 1;
+  pointer-events: none;
+
+  transform-origin: var(--eye-x) var(--eye-y);
+
+  transform:
+    translate3d(
+      calc(-1 * var(--eye-x)),
+      calc(-1 * var(--eye-y)),
+      0
+    )
+    scale(var(--professor-face-scale));
+
+  will-change: transform;
+  backface-visibility: hidden;
+}

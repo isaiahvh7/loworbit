@@ -1,0 +1,11 @@
+{
+  "satelliteName": "ISS (ZARYA)",
+  "line1": "1 25544U 98067A   25073.14731082  .00017389  00000-0  31200-3 0  9990",
+  "line2": "2 25544  51.6356  57.7581 0006471  19.1433 340.9798 15.49984547500427",
+  "noradCatId": 25544,
+  "satId": "XSKZ-5603-1870-9019-3066",
+  "tleSource": "Space-Track.org",
+  "updatedAt": "2025-03-14T07:27:56.411127+0000",
+  "fetchedAt": "2025-03-14T07:27:56.411127+0000",
+  "note": "This is a committed fallback seed. It is overwritten automatically by scripts/fetch-tle.mjs on every build/deploy, so it will always be several months stale if you're reading this in the repo instead of the live site."
+}
