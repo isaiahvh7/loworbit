@@ -18,7 +18,7 @@ const GLOBE_RADIUS = 2.1;
 
 function Globe() {
   const earthRef = useRef<THREE.Group>(null);
-  const earthOutlineTexture = useTexture("/textures/earth-outline.png");
+  const earthOutlineTexture = useTexture(import.meta.env.BASE_URL + "/textures/earth-outline.png");
 
   useFrame(() => {
     if (!earthRef.current) return;
