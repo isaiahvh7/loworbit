@@ -182,7 +182,13 @@ export default function GlobeScene() {
         
 
         <OrbitControls 
-          maxDistance={2000000}
+          target={[0, 0, 0]}   
+          enableDamping        
+          dampingFactor={0.05}
+          minDistance={3}      
+          maxDistance={50} 
+          autoRotate
+          autoRotateSpeed={0.3}    
         />
         
       </Canvas>

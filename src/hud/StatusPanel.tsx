@@ -28,8 +28,7 @@ export default function StatusPanel() {
     <>
     <div className='StatusPanel'>
         <p>Uptime: {counter} ms</p>
-        <p>Connection: STRONG</p>
-        <p>Last Pass: 40 minutes ago</p>
+        <p>Currently Tracking: ISS</p>
     </div>
     </>
   );
