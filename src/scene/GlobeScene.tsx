@@ -188,7 +188,7 @@ export default function GlobeScene() {
           minDistance={3}      
           maxDistance={50} 
           autoRotate
-          autoRotateSpeed={0.3}    
+          autoRotateSpeed={0.2}    
         />
         
       </Canvas>
