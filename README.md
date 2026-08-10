@@ -150,31 +150,6 @@ Brightness can then be configured directly in the URL:
 https://isaiahvh7.github.io/loworbit/#1.5
 ```
 
-## Project Structure
-
-A simplified overview of the project:
-
-```text
-src/
-├── api/
-│   └── SatelliteApi.ts
-│
-├── components/
-│   ├── GlobeScene.tsx
-│   ├── OrbitLine.tsx
-│   ├── SatelliteMarker.tsx
-│   └── Starfield.tsx
-│
-├── App.tsx
-└── main.tsx
-
-public/
-└── textures/
-    └── earth-outline.png
-```
-
-The exact structure may vary depending on the current project organization.
-
 ## 24/7 Display
 
 This project is intended to be displayed continuously on a TV.
