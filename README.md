@@ -1,86 +1,182 @@
-# 🚀 Low Orbit
+# Low Orbit Satellite Visualizer
 
-**Low Orbit** is a sleek, modern project designed to deliver high-performance functionality in a clean and approachable package. Whether you're exploring core app logic, utilities, or interface interactions, this repository is organized to help you move fast and stay in control.
+A real-time 3D satellite visualizer built with **React**, **Vite**, **Three.js**, and **React Three Fiber**.
 
----
+The application displays a globe with satellite orbital information and is designed to run continuously on a TV or large display.
 
-## ✨ What is Low Orbit?
+## Features
 
-Low Orbit is a project focused on delivering a polished experience with a lightweight architecture. It emphasizes clarity, maintainability, and a fast development cycle.
+* Real-time 3D Earth visualization
+* Live satellite position tracking
+* Satellite orbital path visualization
+* Starfield background
+* Earth rotation based on current Greenwich Mean Sidereal Time
+* Automatic camera rotation
+* Automatic TLE data refresh
+* Designed for 24/7 TV/display use
+* URL-controlled display brightness
 
----
+## Technologies
 
-## 📁 Project Structure
+* React
+* Vite
+* Three.js
+* React Three Fiber
+* React Three Drei
+* satellite.js
 
-This repository is organized with a clear separation of concerns for easy navigation and rapid development.
+## Satellite Data
 
-- `src/` — Main source code and implementation files.
-- `tests/` — Automated tests and validation.
-- `docs/` — Documentation and usage guides.
-- `README.md` — Project overview and setup instructions.
+The visualizer currently tracks the **International Space Station (ISS)** using its NORAD catalog ID:
 
----
+25544
 
-## 🚀 Getting Started
+TLE (Two-Line Element) data is loaded through the project's satellite API and automatically refreshed every **15 minutes**.
 
-1. Clone the repository:
+## Brightness Control
 
-   ```bash
-   git clone https://github.com/isaiahvh7/low-orbit.git
-   cd low-orbit
-   ```
+Because the visualizer is intended to run on TVs and other large displays, the brightness can be controlled directly through the URL.
 
-2. Install dependencies:
+The brightness value is specified after the `#` in the URL.
 
-   ```bash
-   # Example for npm/yarn projects
-   npm install
-   # or
-   yarn install
-   ```
+### Examples
 
-3. Run the project:
+Normal brightness:
 
-   ```bash
-   npm start
-   # or
-   yarn start
-   ```
+https://isaiahvh7.github.io/loworbit/
 
----
+25% brighter:
 
-## 🧩 Features
+https://isaiahvh7.github.io/loworbit/#1.25
 
-- Clear and consistent structure
-- Fast setup for development
-- Smooth integration with testing and tooling
-- Designed for extensibility and future growth
+50% brighter:
 
----
+https://isaiahvh7.github.io/loworbit/#1.5
 
-## ⚡ Recommended Workflow
+Twice as bright:
 
-- Create a feature branch for new improvements.
-- Add tests for all changes.
-- Keep commits small and descriptive.
-- Update the documentation when adding new behavior.
+https://isaiahvh7.github.io/loworbit/#2
 
----
+Half brightness:
 
-## 🤝 Contributing
+https://isaiahvh7.github.io/loworbit/#0.5
 
-Contributions are welcome! If you want to help improve Low Orbit:
+If no brightness value is provided, the default is:
 
-- Open an issue for new ideas or bugs.
-- Submit a pull request with your changes.
-- Follow repository conventions for code style and testing.
+1
 
----
 
-## 📜 License
+The brightness value is applied using the CSS `brightness()` filter on the Three.js canvas.
 
-This project is open source and ready for collaboration.
+The brightness can also be changed while the page is running by changing the URL hash.
 
----
+## Controls
 
-> Built to help your project stay lightweight, stable, and ready for launch.
+* **Scroll** — Zoom
+* **Mouse drag** — Rotate the camera
+* **Automatic rotation** — Enabled by default
+
+The visualizer is primarily intended to run unattended, so manual interaction is optional.
+
+## Running Locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/YOUR-USERNAME/loworbit.git
+cd loworbit
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Vite will provide a local development URL, typically:
+
+```text
+http://localhost:5173
+```
+
+## Building
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+The production files will be generated in the `dist` directory.
+
+To preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## Deployment
+
+The project is designed to be hosted using GitHub Pages.
+
+After deployment, the visualizer can be accessed at:
+
+```text
+https://YOUR-USERNAME.github.io/loworbit/
+```
+
+Brightness can then be configured directly in the URL:
+
+```text
+https://YOUR-USERNAME.github.io/loworbit/#1.5
+```
+
+## Project Structure
+
+A simplified overview of the project:
+
+```text
+src/
+├── api/
+│   └── SatelliteApi.ts
+│
+├── components/
+│   ├── GlobeScene.tsx
+│   ├── OrbitLine.tsx
+│   ├── SatelliteMarker.tsx
+│   └── Starfield.tsx
+│
+├── App.tsx
+└── main.tsx
+
+public/
+└── textures/
+    └── earth-outline.png
+```
+
+The exact structure may vary depending on the current project organization.
+
+## 24/7 Display
+
+This project is intended to be displayed continuously on a TV.
+
+For the best results:
+
+* Disable the TV's power-saving or eco mode.
+* Increase the TV backlight if the scene appears too dark.
+* Use the URL brightness control to compensate for different displays.
+* Avoid leaving browser UI visible when using the visualizer as a permanent display.
+* Make sure the display does not automatically turn off.
+
+For example, a TV that appears slightly dim could use:
+
+```text
+https://YOUR-USERNAME.github.io/loworbit/#1.25
+```
+.

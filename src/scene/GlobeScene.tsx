@@ -11,6 +11,7 @@ import { useFrame } from "@react-three/fiber";
 import * as satellite from "satellite.js";
 //import { useThree } from "@react-three/fiber";
 import type { RefObject } from "react";
+import "./GlobeScene.css";
 
 const EARTH_TEXTURE_ROTATION_OFFSET = 0;
 
@@ -127,7 +128,27 @@ export default function GlobeScene() {
   
   const [tle, setTle] = useState<TleResponse | null>(null);
   const professorFaceRef = useRef<HTMLDivElement>(null);
+  const [brightness, setBrightness] = useState(1);
  
+  useEffect(() => {
+    function updateBrightness() {
+      const value = parseFloat(window.location.hash.slice(1));
+
+      if (!isNaN(value)) {
+        setBrightness(value);
+      } else {
+        setBrightness(1);
+      }
+    }
+
+    updateBrightness();
+
+    window.addEventListener("hashchange", updateBrightness);
+
+    return () => {
+      window.removeEventListener("hashchange", updateBrightness);
+    };
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -162,8 +183,13 @@ export default function GlobeScene() {
 
   return (
     <div className="globe-scene">
-      <Canvas camera={{ position: [0, 0, 8], fov: 45 }}>
-        <color attach="background" args={["#000008"]} />
+        <Canvas
+          camera={{ position: [0, 0, 8], fov: 45 }}
+          style={{
+            filter: `brightness(${brightness})`,
+          }}
+        >
+        <color attach="background" args={["#020210"]} />
 
         <ambientLight intensity={0.6} />
         <pointLight position={[5, 5, 5]} intensity={1} />
@@ -192,7 +218,7 @@ export default function GlobeScene() {
         />
         
       </Canvas>
-      /*
+      {/*
       <div ref={professorFaceRef} className="professor-face-overlay">
         <img
           src="/textures/bigv2.png"
@@ -200,7 +226,7 @@ export default function GlobeScene() {
           alt=""
         />
       </div>
-      */
+      */}
     </div>
   );
 }
