@@ -29,7 +29,9 @@ The application displays a globe with satellite orbital information and is desig
 
 The visualizer currently tracks the **International Space Station (ISS)** using its NORAD catalog ID:
 
+```text
 25544
+```
 
 TLE (Two-Line Element) data is loaded through the project's satellite API and automatically refreshed every **15 minutes**.
 
@@ -43,28 +45,39 @@ The brightness value is specified after the `#` in the URL.
 
 Normal brightness:
 
+```text
 https://isaiahvh7.github.io/loworbit/
+```
 
 25% brighter:
 
+```text
 https://isaiahvh7.github.io/loworbit/#1.25
+```
 
 50% brighter:
 
+```text
 https://isaiahvh7.github.io/loworbit/#1.5
+```
 
 Twice as bright:
 
+```text
 https://isaiahvh7.github.io/loworbit/#2
+```
 
 Half brightness:
 
+```text
 https://isaiahvh7.github.io/loworbit/#0.5
+```
 
 If no brightness value is provided, the default is:
 
+```text
 1
-
+```
 
 The brightness value is applied using the CSS `brightness()` filter on the Three.js canvas.
 
@@ -83,7 +96,7 @@ The visualizer is primarily intended to run unattended, so manual interaction is
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/loworbit.git
+git clone https://github.com/isaiahvh7/loworbit.git
 cd loworbit
 ```
 
@@ -128,13 +141,13 @@ The project is designed to be hosted using GitHub Pages.
 After deployment, the visualizer can be accessed at:
 
 ```text
-https://YOUR-USERNAME.github.io/loworbit/
+https://isaiahvh7.github.io/loworbit/
 ```
 
 Brightness can then be configured directly in the URL:
 
 ```text
-https://YOUR-USERNAME.github.io/loworbit/#1.5
+https://isaiahvh7.github.io/loworbit/#1.5
 ```
 
 ## Project Structure
@@ -177,6 +190,6 @@ For the best results:
 For example, a TV that appears slightly dim could use:
 
 ```text
-https://YOUR-USERNAME.github.io/loworbit/#1.25
+https://isaiahvh7.github.io/loworbit/#1.25
 ```
-.
+
