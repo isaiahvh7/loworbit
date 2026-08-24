@@ -18,9 +18,20 @@ function App() {
         </div>
       </section>
 
-      <section id="topleft" className="hud-panel">
-        <StatusPanel />
-      </section>
+      <div id="topleft-stack">
+        <section id="topleft" className="hud-panel">
+          <StatusPanel />
+        </section>
+
+        {/* Unboxed map-style legend, stars show through behind it */}
+        <div id="tracking-legend">
+          <p className="legend-title">Currently Tracking</p>
+          <p className="legend-item">
+            <span className="legend-dot" />
+            ISS
+          </p>
+        </div>
+      </div>
 
       <section id="topright" className="hud-panel">
         <TelemetryPanel />

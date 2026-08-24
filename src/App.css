@@ -1,7 +1,13 @@
-#topleft {
+/* Fixed column: boxed club header on top, unboxed legend flowing below */
+#topleft-stack {
   position: fixed;
   top: 10px;
   left: 10px;
+  z-index: 10;
+}
+
+#topleft {
+  position: relative;
 
   width: 220px;
   padding: 16px 20px;
@@ -9,6 +15,59 @@
   text-align: left;
 
   color: aqua;
+}
+
+.StatusPanel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.club-name p {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.club-logo {
+  width: 64px;
+  height: auto;
+  /* recolour the logo to the theme cyan */
+  filter: brightness(0) invert(1) sepia(1) saturate(20) hue-rotate(120deg)
+    drop-shadow(0 0 4px rgba(0, 255, 255, 0.6));
+}
+
+#tracking-legend {
+  margin-top: 14px;
+  padding-left: 6px;
+  text-align: left;
+  color: aqua;
+  font-family: monospace;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 0 6px rgba(0, 255, 255, 0.8);
+}
+
+.legend-title {
+  font-size: 15px;
+  opacity: 0.8;
+  margin-bottom: 6px;
+}
+
+.legend-item {
+  font-size: 19px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ff0033;
+  box-shadow: 0 0 8px rgba(255, 0, 51, 0.8);
 }
 
 #topright { 
@@ -93,6 +152,27 @@
 
 .TelemetryPanel p {
   color:aqua;
+}
+
+/* Header row naming what a panel shows - same font/colour as the contents,
+   separated from them by a thin cyan rule. */
+.panel-label {
+  color: aqua;
+  text-align: right;
+  padding-bottom: 6px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.4);
+}
+
+/* Scrollbox: header stays put, only the body scrolls */
+#scrollbox {
+  display: flex;
+  flex-direction: column;
+}
+
+.scrollbox-body {
+  flex: 1;
+  overflow-y: hidden;
 }
 
 #middle {

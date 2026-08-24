@@ -42,6 +42,7 @@ export default function TelemetryPanel() {
 
   return (
     <div className="TelemetryPanel">
+      <p className="panel-label">Telemetry</p>
       {error && <p style={{ color: "red" }}>{error}</p>}
 
       <p>MODE: {telemetry?.mode ?? "Loading..."}</p>

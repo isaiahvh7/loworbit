@@ -42,10 +42,13 @@ function RandomScrollBox() {
   }, [lines]);
 
   return (
-    <div id="scrollbox" ref={boxRef}>
-      {lines.map((line, index) => (
-        <p key={index}>{line}</p>
-      ))}
+    <div id="scrollbox">
+      <p className="panel-label">Data Stream</p>
+      <div className="scrollbox-body" ref={boxRef}>
+        {lines.map((line, index) => (
+          <p key={index}>{line}</p>
+        ))}
+      </div>
     </div>
   );
 }

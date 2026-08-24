@@ -1,35 +1,14 @@
-import { useEffect, useState } from "react";
-
+import logo from "/knight-head-1color.png";
 
 export default function StatusPanel() {
-    const [counter, setCounter] = useState(0);
-
-  useEffect(() => {
-    let animationId: number;
-    let lastTime = performance.now();
-
-    const update = (currentTime: number) => {
-      const delta = currentTime - lastTime;
-
-      if (delta >= 1) {
-        setCounter((prev) => prev + 1);
-        lastTime = currentTime;
-      }
-
-      animationId = requestAnimationFrame(update);
-    };
-
-    animationId = requestAnimationFrame(update);
-
-    return () => cancelAnimationFrame(animationId);
-  }, []);
-
   return (
-    <>
-    <div className='StatusPanel'>
-        <p>Uptime: {counter} ms</p>
-        <p>Currently Tracking: ISS</p>
+    <div className="StatusPanel">
+      <div className="club-name">
+        <p>Calvin</p>
+        <p>CubeSat</p>
+        <p>Club</p>
+      </div>
+      <img src={logo} className="club-logo" alt="Calvin CubeSat Club logo" />
     </div>
-    </>
   );
 }
