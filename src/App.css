@@ -9,8 +9,8 @@
 #topleft {
   position: relative;
 
-  width: 220px;
-  padding: 16px 20px;
+  width: 285px;
+  padding: 20px 26px;
 
   text-align: left;
 
@@ -25,13 +25,13 @@
 }
 
 .club-name p {
-  font-size: 18px;
+  font-size: 23px;
   font-weight: bold;
   line-height: 1.2;
 }
 
 .club-logo {
-  width: 64px;
+  width: 84px;
   height: auto;
   /* recolour the logo to the theme cyan */
   filter: brightness(0) invert(1) sepia(1) saturate(20) hue-rotate(120deg)
@@ -50,7 +50,7 @@
 }
 
 .legend-title {
-  font-size: 15px;
+  font-size: 17px;
   opacity: 0.8;
   margin-bottom: 6px;
 }
