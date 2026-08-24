@@ -3,8 +3,10 @@ import './App.css'
 import StatusPanel from './hud/StatusPanel.tsx'
 import TelemetryPanel from './hud/TelemetryPanel.tsx'
 import RandomScrollBox from './hud/RandomScrollBox.tsx'
-import futureCircle from './assets/futureCircle.png'
+import GroundTrackMap from './hud/GroundTrackMap.tsx'
+//import futureCircle from './assets/futureCircle.png'
 import GlobeScene from "./scene/GlobeScene";
+//import logo from "/knight-head-1color.png";
 //import visserImage from "./assets/big V.jpg";
 
 function App() {
@@ -29,6 +31,9 @@ function App() {
       </section>
 
       <section id="lowerleft" className="hud-panel">
+        <GroundTrackMap />
+        {/*
+        <img src={logo} className="logo" width="150" height="200" alt="Logo" />
         <div className="futuristicCircleInner">
           <img
             src={futureCircle}
@@ -38,6 +43,7 @@ function App() {
             alt=""
           />
         </div>
+        */}
       </section>
 
     </main>
