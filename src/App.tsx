@@ -2,7 +2,8 @@
 import './App.css'
 import StatusPanel from './hud/StatusPanel.tsx'
 import TelemetryPanel from './hud/TelemetryPanel.tsx'
-import RandomScrollBox from './hud/RandomScrollBox.tsx'
+//import RandomScrollBox from './hud/RandomScrollBox.tsx'
+import badge from "/CubeSatLogoCroppedFinal.png";
 import GroundTrackMap from './hud/GroundTrackMap.tsx'
 //import futureCircle from './assets/futureCircle.png'
 import GlobeScene from "./scene/GlobeScene";
@@ -38,7 +39,8 @@ function App() {
       </section>
 
       <section id="lowerright" className="hud-panel">
-        <RandomScrollBox />
+        {/* <RandomScrollBox /> */}
+        <img src={badge} className="club-badge" alt="Calvin CubeSat" />
       </section>
 
       <section id="lowerleft" className="hud-panel">

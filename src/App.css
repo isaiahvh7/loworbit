@@ -17,25 +17,8 @@
   color: aqua;
 }
 
-.StatusPanel {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.club-name p {
-  font-size: 23px;
-  font-weight: bold;
-  line-height: 1.2;
-}
-
-.club-logo {
-  width: 84px;
-  height: auto;
-  /* recolour the logo to the theme cyan */
-  filter: brightness(0) invert(1) sepia(1) saturate(20) hue-rotate(120deg)
-    drop-shadow(0 0 4px rgba(0, 255, 255, 0.6));
+.StatusPanel .panel-label {
+  text-align: left;
 }
 
 #tracking-legend {
@@ -234,6 +217,20 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#lowerright {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 10;
+  line-height: 0;
+}
+
+.club-badge {
+  width: 243px;
+  height: auto;
+  filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.18));
 }
 
 #scrollbox {
