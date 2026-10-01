@@ -304,3 +304,129 @@
   will-change: transform;
   backface-visibility: hidden;
 }
+/* ---------- Mobile / small screens ----------
+   Everything above is sized in fixed px for the kiosk display. On narrow
+   screens shrink the four corner overlays so they fit side by side instead
+   of covering the globe and each other. */
+@media (max-width: 768px) {
+  #topleft-stack {
+    top: 6px;
+    left: 6px;
+  }
+
+  #topleft,
+  #topright {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    line-height: 1.35;
+  }
+
+  #topleft {
+    width: 48vw;
+    max-width: 285px;
+    padding: 10px 12px;
+  }
+
+  #topright {
+    top: 6px;
+    right: 6px;
+    width: 40vw;
+    max-width: 180px;
+    padding: 10px 12px;
+  }
+
+  .panel-label {
+    padding-bottom: 4px;
+    margin-bottom: 4px;
+  }
+
+  #tracking-legend {
+    margin-top: 8px;
+    padding-left: 4px;
+  }
+
+  .legend-title {
+    font-size: 10px;
+    margin-bottom: 3px;
+  }
+
+  .legend-item {
+    font-size: 12px;
+    gap: 6px;
+  }
+
+  .legend-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  #lowerleft {
+    bottom: 6px;
+    left: 6px;
+    height: auto;
+  }
+
+  /* SVG has a viewBox, so CSS sizing scales the whole map */
+  .ground-track-map {
+    width: 56vw;
+    max-width: 360px;
+    height: auto;
+    aspect-ratio: 2 / 1;
+  }
+
+  #lowerright {
+    right: 6px;
+    bottom: 6px;
+  }
+
+  .club-badge {
+    width: 32vw;
+    max-width: 243px;
+  }
+}
+
+/* Phones in landscape: plenty of width but very little height */
+@media (max-height: 500px) and (orientation: landscape) {
+  #topleft,
+  #topright {
+    font-size: 10px;
+    line-height: 1.3;
+    padding: 8px 10px;
+  }
+
+  #topleft {
+    width: 220px;
+  }
+
+  #topright {
+    width: 160px;
+  }
+
+  #tracking-legend {
+    margin-top: 6px;
+  }
+
+  .legend-title {
+    font-size: 10px;
+  }
+
+  .legend-item {
+    font-size: 12px;
+  }
+
+  #lowerleft {
+    height: auto;
+  }
+
+  .ground-track-map {
+    width: 30vw;
+    max-width: 260px;
+    height: auto;
+    aspect-ratio: 2 / 1;
+  }
+
+  .club-badge {
+    width: 18vw;
+    max-width: 160px;
+  }
+}
